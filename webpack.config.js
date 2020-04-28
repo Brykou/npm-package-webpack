@@ -1,7 +1,7 @@
-var path = require("path");
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = {
-  mode: "production",
+const webpackConfig = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "build"),
@@ -13,14 +13,16 @@ module.exports = {
       {
         test: /\.js$/,
         include: path.resolve(__dirname, "src"),
-        exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
         },
       },
     ],
   },
+  plugins: [new CleanWebpackPlugin()],
   externals: {
     react: "commonjs react", // Exclude React from bundle and use root app react instead
   },
 };
+
+module.exports = webpackConfig;

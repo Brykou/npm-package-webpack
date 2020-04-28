@@ -4,8 +4,8 @@
   "description": "Template for building a React component lib compiled with Babel and Webpack",
   "main": "build/index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack --watch",
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
     "prepublishOnly": "npm run build"
   },
   "author": "Brykou",
@@ -20,6 +20,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "react": "^16.13.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
