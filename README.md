@@ -8,3 +8,4 @@ If you want to create a JS lib without React :
 
 - Remove `React` from package.json and webpack.config.js.
 - Remove `@babel/preset-react` from package.json and babel.config.js
+- Remove eslint configs and plugins from package.json and babel.config.js
